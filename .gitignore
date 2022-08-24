@@ -1,0 +1,25 @@
+# idea
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# gradle
+/out/
+/.gradle/
+/build/
+/run/
+/remappedSrc/
+
+# vscode
+/bin/
+
+# filetypes we don't want
+*.class
+*.log
+*.war
+*.nar
+*.zip
+*.tar.gz
+*.rar
+*.stackdump

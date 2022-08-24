@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "lithium_api_example",
+  "version": "${version}",
+  "name": "Lithium Api Example",
+  "description": "an example mod for using the lithium api",
+  "authors": [
+    "ix0rai"
+  ],
+  "contact": {
+    "repo": "https://github.com/ix0rai/lithium-example-mod"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "lithiumapiexample.lithiumapiexample.LithiumApiExample"
+    ]
+  },
+  "mixins": [
+    "lithium_api_example.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "fabric": "*",
+    "minecraft": "1.19.2"
+  }
+}
