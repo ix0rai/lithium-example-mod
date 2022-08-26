@@ -11,6 +11,14 @@ configurations {
     api.extendsFrom shadow
 }
 
+shadowJar {
+    dependsOn jar
+    configurations = [project.configurations.shadow]
+    destinationDirectory.set(file("${project.buildDir}/devlibs"))
+    archiveClassifier.set("dev")
+}
+prepareRemapJar.dependsOn(shadowJar)
+
 dependencies {
     // versions are defined in gradle.properties
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -24,14 +32,6 @@ dependencies {
     // we include this in the built jar file so that the user does not have to download additional libraries
     shadow(files("libs/lithium-fabric-${project.lithium_api_version}-api-dev.jar"))
 }
-
-shadowJar {
-    dependsOn jar
-    configurations = [project.configurations.shadow]
-    destinationDirectory.set(file("${project.buildDir}/devlibs"))
-    archiveClassifier.set("dev")
-}
-prepareRemapJar.dependsOn(shadowJar)
 
 processResources {
     inputs.property "version", project.version
